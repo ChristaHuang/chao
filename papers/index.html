@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" media="screen,projection,print" href="./css/layout_setup.css" />
+  <link rel="stylesheet" type="text/css" media="screen,projection,print" href="./css/layout_text.css" />
+  <title>Chao's Profile</title>
+</head>
+
+<body>
+  <div class="page-container">
+    <div class="header">
+      <div class="header-bottom">
+        <div class='thumbnailWrapper'>
+          <ul id='container'>
+            <div class='clear'></div><!-- clear the float -->
+          </ul>
+        </div>
+              <div class="nav2">
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                </ul>
+                <ul>
+                  <li><a href="index.html">Publications</a></li>
+                </ul>
+                <ul>
+                  <li><a href="index.html">Project</a></li>
+                </ul>
+                <ul>
+                  <li><a href="index.html">Contact me</a></li>
+                </ul>
+              </div>
+      	  </div>
+    <div class="main">
+      <div class="main-content">
+        <h1 class="pagetitle">Personal Status</h1>
+        <div class="column1-unit">
+          <h1>xxxxxxx</h1>
+          <p>I am now working with Professor Qin Lv in Dept. of Computer Science at Colorado University.</p>
+        </div>
+        <h1 class="pagetitle">Publications</h1>
+
+        <div class="column1-unit">
+          <h1>Low- Rank Matrix Approximation with Stability</h1>
+          <p>Dongsheng Li*, <strong>Chao Chen*</strong>, Qin Lv, Junchi Yan, Stephen	Chu, Li Shang. Low- Rank Matrix Approximation with Stability. In Proceedings of the 33rd International Conference on Machine Learning (ICML 2016). (Equally)</p>
+        </div>
+        <hr class="clear-contentunit" />
+
+        <div class="column1-unit">
+          <h1>MPMA: Mixture Probabilistic Matrix Approximation for Collaborative Filtering</h1>
+          <p><strong>Chao Chen</strong>, Dongsheng Li, Qin Lv, Junchi Yan, Stephen M. Chu, Li Shang. MPMA: Mixture Probabilistic Matrix Approximation for Collaborative Filtering. In Proceedings of the 25th International Joint Conference on Artificial Intelligence (IJCAI 2016). [<a href="papers/ijcai16.pdf">pdf</a>]</p>
+        </div>
+        <hr class="clear-contentunit" />
+
+        <div class="column1-unit">
+          <h1>An algorithm for efficient privacy-preserving item-based collaborative filtering</h1>
+          <p>Dongsheng Li, <strong>Chao Chen</strong>, Qin Lv, Li Shang, Yingying Zhao, Tun Lu, and Ning Gu. An algorithm for efficient privacy-preserving item-based collaborative filtering. Future Generation Computer Systems, 2016, 55:311-320.</p>
+        </div>
+        <hr class="clear-contentunit" />
+
+        <div class="column1-unit">
+          <h1>WEMAREC: Accurate and Scalable Recommendation through Weighted and Ensemble Matrix Approximation</h1>
+          <p><strong>Chao Chen</strong>, Dongsheng Li, Qin Lv, Li Shang, Yingying Zhao. WEMAREC: Accurate and Scalable Recommendation through Weighted and Ensemble Matrix Approximation. In Proceedings of the 38th Annual International ACM SIGIR Conference on Research and Development on Information Retrieval (SIGIR 2015). [<a href="papers/fp209.pdf">pdf</a>][<a href="papers/zSigir-all.pdf">slides</a>]</p>
+        </div>
+        <hr class="clear-contentunit" />
+
+        <div class="column1-unit">
+          <h1>An adaptive multi-phenotype GEP algorithm</h1>
+          <p>Qu Li, <strong>Chao Chen</strong>, Weihong Wang, Cheng Ren, and Siliang Xia. An adaptive multi-phenotype GEP algorithm. ICNC 2012. [<a href="papers/icnc2012.pdf">pdf</a>]</p>
+        </div>
+        <hr class="clear-contentunit" />
+
+
+    <div class="footer">
+      <p>Copyright &copy; 2016 Chao | All Rights Reserved</p>
+    </div>
+  </div>
+
+</body>
+</html>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		$(window).load(function(){
+
+			var thumbnail = {
+				imgIncrease : 100,
+				effectDuration : 400,
+				imgWidth : $('.thumbnailWrapper ul li').find('img').width(),
+				imgHeight : $('.thumbnailWrapper ul li').find('img').height()
+			};
+			$('.thumbnailWrapper ul li').css({
+				'width' : thumbnail.imgWidth,
+				'height' : thumbnail.imgHeight
+			});
+			$('.thumbnailWrapper ul li').hover(function(){
+        debugger;
+				$(this).find('img').stop().animate({
+					width: parseInt(thumbnail.imgWidth) + thumbnail.imgIncrease,
+					left: thumbnail.imgIncrease/2*(-1),
+					top: thumbnail.imgIncrease/2*(-1)
+				},{
+					"duration": thumbnail.effectDuration,
+					"queue": false
+				});
+				$(this).find('.caption:not(:animated)').slideDown(thumbnail.effectDuration);
+			}, function(){
+				$(this).find('img').animate({
+					width: thumbnail.imgWidth,
+					left: 0,
+					top: 0
+				}, thumbnail.effectDuration);
+				$(this).find('.caption').slideUp(thumbnail.effectDuration);
+			});
+
+		});
+   var html = '';
+   for(var i=0;i<45;i++){
+        html +='<li><a href="#"><img src="C:\\'+i+'.jpg" /></a><div class="caption"><p class="captionInside">阳光春色</p></div></li>';
+      }
+      document.getElementById('container').innerHTML = html;
+	</script>

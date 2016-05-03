@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" media="screen,projection,print" href="./css/layout_setup.css" />
+  <link rel="stylesheet" type="text/css" media="screen,projection,print" href="./css/layout_text.css" />
+  <title>Chao's Profile</title>
+</head>
+
+<body>
+  <div class="page-container">
+    <div class="header">
+      <div class="header-bottom">
+        <div class='thumbnailWrapper'>
+          <ul id='container'>
+            <div class='clear'></div><!-- clear the float -->
+          </ul>
+          </div>
+              <div class="nav2">
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                </ul>
+                <ul>
+                  <li><a href="work.html">Working Experience</a></li>
+                </ul>
+                <ul>
+                  <li><a href="project.html">Project</a></li>
+                </ul>
+                <ul>
+                  <li><a href="contact.html">Contact me</a></li>
+                </ul>
+              </div>
+      	  </div>
+    <div class="main">
+      <div class="main-content">
+        <br></br>
+        <h1 class="pagetitle">PROFESSIONAL AND RESEARCH EXPERIENCE</h1>
+
+        <div class="column1-unit">
+          <h1>BIGDATA: Small: DCM: ESCE: Condensate Database for Efficient Anomaly Detection and Quality Assurance of Massive Cryospheric Data</h1>
+          <p>Repository: <a href="https://github.com/Hanke007/ColoradoUni.git">https://github.com/Hanke007/ColoradoUni.git</a> </p>
+          <p>Website: <a href="http://vsdb.work/">http://vsdb.work/</a></p>
+          <p>Language/Platform: Java, Java Script, Linux, Bash, H2 Database</p>
+          <p>Description: A simple demo to show the latest work on large-scale remote sensing dataset, where users can sufficiently query the anomalies in certain domain within a specific time range.</p>
+
+        <hr class="clear-contentunit" />
+
+        <div class="column1-unit">
+          <h1>WEMAREC: Accurate and Scalable Recommendation through Weighted and Ensemble Matrix Approximation</h1>
+          <p>Repository: <a href="https://github.com/Hanke007/GenericSystem.git">https://github.com/Hanke007/GenericSystem.git</a></p>
+          <p>Language/Platform: Java</p>
+          <p>Description: A library to evaluate performance of commonly-used collaborative filtering methods, where ensemble-based algorithms are implemented as well.</p>
+
+        </div>
+</div>
+  </div>
+
+</body>
+<div class="footer">
+  <p>Copyright &copy; 2016 Chao | All Rights Reserved</p>
+</div>
+</html>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		$(window).load(function(){
+
+			var thumbnail = {
+				imgIncrease : 100,
+				effectDuration : 400,
+				imgWidth : $('.thumbnailWrapper ul li').find('img').width(),
+				imgHeight : $('.thumbnailWrapper ul li').find('img').height()
+			};
+			$('.thumbnailWrapper ul li').css({
+				'width' : thumbnail.imgWidth,
+				'height' : thumbnail.imgHeight
+			});
+			$('.thumbnailWrapper ul li').hover(function(){
+
+				$(this).find('img').stop().animate({
+					width: parseInt(thumbnail.imgWidth) + thumbnail.imgIncrease,
+					left: thumbnail.imgIncrease/2*(-1),
+					top: thumbnail.imgIncrease/2*(-1)
+				},{
+					"duration": thumbnail.effectDuration,
+					"queue": false
+				});
+				$(this).find('.caption:not(:animated)').slideDown(thumbnail.effectDuration);
+			}, function(){
+				$(this).find('img').animate({
+					width: thumbnail.imgWidth,
+					left: 0,
+					top: 0
+				}, thumbnail.effectDuration);
+				$(this).find('.caption').slideUp(thumbnail.effectDuration);
+			});
+
+		});
+   var html = '';
+   for(var i=0;i<45;i++){
+        html +='<li><a href="#"><img src="C:\\'+i+'.jpg" /></a><div class="caption"><p class="captionInside">阳光春色</p></div></li>';
+      }
+      document.getElementById('container').innerHTML = html;
+	</script>

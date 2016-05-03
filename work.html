@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" media="screen,projection,print" href="./css/layout_setup.css" />
+  <link rel="stylesheet" type="text/css" media="screen,projection,print" href="./css/layout_text.css" />
+  <title>Chao's Profile</title>
+</head>
+
+<body>
+  <div class="page-container">
+    <div class="header">
+      <div class="header-bottom">
+        <div class='thumbnailWrapper'>
+          <ul id='container'>
+            <div class='clear'></div><!-- clear the float -->
+          </ul>
+        </div>
+              <div class="nav2">
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                </ul>
+                <ul>
+                  <li><a href="work.html">Working Experience</a></li>
+                </ul>
+                <ul>
+                  <li><a href="project.html">Project</a></li>
+                </ul>
+                <ul>
+                  <li><a href="contact.html">Contact me</a></li>
+                </ul>
+              </div>
+      	  </div>
+    <div class="main">
+      <div class="main-content">
+        <br></br>
+        <h1 class="pagetitle">PROFESSIONAL AND RESEARCH EXPERIENCE</h1>
+
+        <div class="column1-unit">
+          <h1>University of Colorado, Boulder, CO, United States</h1>
+          <h3>Advisor: Prof. Qin Lv, 2015.7 — 2016.2</h3>
+          <p>Research of novelty event detection and quality control techniques in large-scale remote sensing data such as SSMI/S, AVHR and MODIS dataset, and development of a scalable framework for data mining. Notably, this platform has successfully discovered systematic data issues of SSMI/S dataset, which is not reported by National Snow and Ice Data Center (NSIDC).</p>
+        </div>
+        <hr class="clear-contentunit" />
+
+        <div class="column1-unit">
+          <h1>Alipay.com, Hangzhou, China</h1>
+          <h3>Developer, 2013.1 — 2013.8</h3>
+          <p>Participating in development of an abstract gateway which collects transaction information from database or through web-service components and assembles them for physical communication gateway.</p>
+        </div>
+        <hr class="clear-contentunit" />
+
+        <div class="column1-unit">
+          <h1>Applied Networks Lab, Zhejiang University of Technology, Hangzhou, China</h1>
+          <h3>Advisor: Qu Li and Prof. Weihong Wang, 2011.12 — 2012.6</h3>
+          <p> Research of gene expression programming for time series analysis and prediction and memory-based methods for recommender system, and implementation of an image segmentation system using thresholding methods.</p>
+        </div>
+        <hr class="clear-contentunit" />
+
+        <div class="column1-unit">
+          <h1>Nokia Siemens Networks, Hangzhou, China</h1>
+          <h3>Intern, 2011.7 — 2011.11</h3>
+          <p>Development of plugins on Hudson/Jenkins platform for continuous integration which detect modifications of project-specified configurations for testing tasks in one server and then copies those actions to related servers, and deployment and maintenance of Linux servers for functional tests.</p>
+        </div>
+        <hr class="clear-contentunit" />
+  </div>
+  <div class="footer">
+    <p>Copyright &copy; 2016 Chao | All Rights Reserved</p>
+  </div>
+</body>
+</html>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		$(window).load(function(){
+
+			var thumbnail = {
+				imgIncrease : 100,
+				effectDuration : 400,
+				imgWidth : $('.thumbnailWrapper ul li').find('img').width(),
+				imgHeight : $('.thumbnailWrapper ul li').find('img').height()
+			};
+			$('.thumbnailWrapper ul li').css({
+				'width' : thumbnail.imgWidth,
+				'height' : thumbnail.imgHeight
+			});
+			$('.thumbnailWrapper ul li').hover(function(){
+
+				$(this).find('img').stop().animate({
+					width: parseInt(thumbnail.imgWidth) + thumbnail.imgIncrease,
+					left: thumbnail.imgIncrease/2*(-1),
+					top: thumbnail.imgIncrease/2*(-1)
+				},{
+					"duration": thumbnail.effectDuration,
+					"queue": false
+				});
+				$(this).find('.caption:not(:animated)').slideDown(thumbnail.effectDuration);
+			}, function(){
+				$(this).find('img').animate({
+					width: thumbnail.imgWidth,
+					left: 0,
+					top: 0
+				}, thumbnail.effectDuration);
+				$(this).find('.caption').slideUp(thumbnail.effectDuration);
+			});
+
+		});
+   var html = '';
+   for(var i=0;i<45;i++){
+        html +='<li><a href="#"><img src="C:\\'+i+'.jpg" /></a><div class="caption"><p class="captionInside">阳光春色</p></div></li>';
+      }
+      document.getElementById('container').innerHTML = html;
+	</script>
